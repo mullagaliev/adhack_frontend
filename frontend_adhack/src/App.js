@@ -18,8 +18,18 @@ class App extends Component {
         </div>
         <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
+            <Icon disabled name='users' />
         </p>
           <Login />
+          <Icon.Group size='huge'>
+              <Icon size='big' color='red' name='dont' />
+              <Icon color='black' name='user' />
+          </Icon.Group>
+          <Icon.Group size='huge'>
+              <Icon loading size='big' name='sun' />
+              <Icon name='user' />
+          </Icon.Group>
+
       </div>
     );
   }
