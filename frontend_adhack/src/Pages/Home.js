@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 
-import Login from './Layouts/LoginLayout';
-import Test from './Layouts/Test';
+import Test from '../Layouts/Test';
 
 import { Button, Icon, Grid, Message } from 'semantic-ui-react'
 
 
-class App extends Component {
+class Home extends Component {
     render() {
         return (
             <div className="App">
@@ -20,7 +19,6 @@ class App extends Component {
                     To get started, edit <code>src/App.js</code> and save to reload.
                     <Icon disabled name='users' />
                 </p>
-                <Login />
                 <Icon.Group size='huge'>
                     <Icon size='big' color='red' name='dont' />
                     <Icon color='black' name='user' />
@@ -29,10 +27,9 @@ class App extends Component {
                     <Icon loading size='big' name='sun' />
                     <Icon name='user' />
                 </Icon.Group>
-
             </div>
         );
     }
 }
 
-export default App;
+export default Home;
