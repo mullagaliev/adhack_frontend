@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Button, Icon, Image as ImageComponent, Item, Label  } from 'semantic-ui-react'
+import { Button, Icon, Image as ImageComponent, Item, Label, Image  } from 'semantic-ui-react'
 
 class Card extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Card extends Component {
 
         let strDate = day + "." + month + "." + year;
         return (
-            <Item className="CardItem">
+            <Item>
                 <Item.Image src='http://68.media.tumblr.com/2612088fda38b4eeb28b0884fc59b145/tumblr_o8putdcByN1st5lhmo1_1280.jpg' />
                 <Item.Content>
                     <Item.Header as='a'>{this.state.data.name}</Item.Header>

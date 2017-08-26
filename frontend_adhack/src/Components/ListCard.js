@@ -20,7 +20,7 @@ class ListCard extends Component {
         this.state = {data: data};
     }
     onUpdate(){
-        return 1 ;
+        //return 1 ;
         jsonItem = data.response.pop();
 
         var newJsonItem = Object.assign({}, jsonItem);
@@ -32,15 +32,14 @@ class ListCard extends Component {
     };
     render() {
         let ListCardItems = data.response.map((item) =>
-            <Card key={item.id} data={item}/>
+            <div className="CardItem">
+                <Card key={item.id} data={item}/>
+            </div>
         );
 
         return (
             <div className="CardList">
                 <Item.Group divided onClick={this.onUpdate.bind(this)}>
-                    <div className="CardItem">
-                        <AddCard />
-                    </div>
                     {ListCardItems}
                 </Item.Group>
             </div>
