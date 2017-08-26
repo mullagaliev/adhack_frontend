@@ -291,7 +291,7 @@ class AddCard extends React.Component {
                 <Grid columns={1}>
                     <Grid.Column>
                         <Segment raised>
-                            <Label attached='top' size="big">Добавить новую рекламную компанию</Label>
+                            <Label attached='top' size="big" color='blue'>Добавить новую рекламную компанию</Label>
                             <div className="CompanyInfo">
                                 <span> </span>
                             </div>
@@ -344,16 +344,15 @@ class AddCard extends React.Component {
                                 </Form.Group>
                                 <Form.Group inline grouped>
                                     <Grid columns={2}>
-                                        <Grid.Column width={4} >
+                                        <Grid.Column  >
                                             <Label>Пол:</Label>
                                         </Grid.Column>
-                                        <Grid.Column  width={12}>
+                                        <Grid.Column  >
                                             <Form.Radio label='Мужчины' value='sm'  control='input' type='radio' name='htmlRadios'/>
                                             <Form.Radio label='Женщины' value='md'  control='input' type='radio' name='htmlRadios'/>
                                             <Form.Radio label='Все' value='lg'  control='input' type='radio' name='htmlRadios'/>
                                         </Grid.Column>
                                     </Grid>
-
                                 </Form.Group>
                             </div>
 
@@ -376,7 +375,9 @@ class AddCard extends React.Component {
                             </div>
 
                             <div className="CompanyInfo">
-                                <Button fluid color="green" size="big">Добавить</Button>
+                                <Button fluid color="green" size="big">
+                                    <Icon name="plus"/>
+                                    Добавить</Button>
                             </div>
                         </Segment>
                     </Grid.Column>
