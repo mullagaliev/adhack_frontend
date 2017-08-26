@@ -29,9 +29,10 @@ class Card extends Component {
                         <span className='cinema'><b>Дата создания:</b> {strDate}</span>
                     </Item.Meta>
                     <Item.Description> <a><b>Arrested Development</b></a></Item.Description>
-                    <Item.Extra>
-                        <Label>IMAX</Label>
-                        <Label icon='globe' content='Additional Languages' />
+                    <Item.Extra> 
+                        <Label icon='vk' content="Vkontakte"/>
+                        <Label icon='yahoo' content="Yandex"/>
+                        <Label icon='facebook f' content="Facebook"/>
                     </Item.Extra>
                 </Item.Content>
             </Item>
