@@ -2,5 +2,5 @@
 > npm start
 
 #Build css style theme
-> cd semantic
+> cd src/semantic
 > gulp
