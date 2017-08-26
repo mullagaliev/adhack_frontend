@@ -20,6 +20,7 @@ class ListCard extends Component {
         this.state = {data: data};
     }
     onUpdate(){
+        return 1 ;
         jsonItem = data.response.pop();
 
         var newJsonItem = Object.assign({}, jsonItem);
@@ -37,10 +38,10 @@ class ListCard extends Component {
         return (
             <div className="CardList">
                 <Item.Group divided onClick={this.onUpdate.bind(this)}>
-                    {ListCardItems}
                     <div className="CardItem">
                         <AddCard />
                     </div>
+                    {ListCardItems}
                 </Item.Group>
             </div>
         );

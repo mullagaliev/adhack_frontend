@@ -342,11 +342,18 @@ class AddCard extends React.Component {
                                     <Label width={2}>Города</Label>
                                     <Dropdown label='Страны'fluid multiple selection search options={cities}  width={14}/>
                                 </Form.Group>
-                                <Form.Group inline>
-                                    <label>Пол:</label>
-                                    <Form.Radio label='Мужчины' value='sm'  />
-                                    <Form.Radio label='Женщины' value='md'  />
-                                    <Form.Radio label='Все' value='lg' checked  />
+                                <Form.Group inline grouped>
+                                    <Grid columns={2}>
+                                        <Grid.Column width={4} >
+                                            <Label>Пол:</Label>
+                                        </Grid.Column>
+                                        <Grid.Column  width={12}>
+                                            <Form.Radio label='Мужчины' value='sm'  control='input' type='radio' name='htmlRadios'/>
+                                            <Form.Radio label='Женщины' value='md'  control='input' type='radio' name='htmlRadios'/>
+                                            <Form.Radio label='Все' value='lg'  control='input' type='radio' name='htmlRadios'/>
+                                        </Grid.Column>
+                                    </Grid>
+
                                 </Form.Group>
                             </div>
 
