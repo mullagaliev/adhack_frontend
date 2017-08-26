@@ -16,6 +16,7 @@ const Main = () => (
     </main>
 );
 
+
 const FullRoster = () => (
     <div>
         <ul>
@@ -55,7 +56,7 @@ const Header = () => (
             </ul>
         </nav>
     </header>
-)
+);
 
 
 class App extends Component {
