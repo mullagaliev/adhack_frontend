@@ -18,6 +18,9 @@ class Home extends Component {
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
                     <Icon disabled name='users' />
+                    <Button onClick={this.onHandler()}>
+                        Click Here
+                    </Button>
                 </p>
                 <Icon.Group size='huge'>
                     <Icon size='big' color='red' name='dont' />
