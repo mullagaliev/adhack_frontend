@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Image, List } from 'semantic-ui-react'
+import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react'
 import  Card from './Card';
-
+import  AddCard from './AddCard';
 var jsonItem = {"id":1007813523,
     "type":"normal",
     "name":"Бой в Hookah PACMAN",
@@ -31,13 +31,18 @@ class ListCard extends Component {
     };
     render() {
         let ListCardItems = data.response.map((item) =>
-            <Card key={item.id} />
+            <Card key={item.id} data={item}/>
         );
 
         return (
-            <List relaxed className="ListCard" onClick={this.onUpdate.bind(this)}>
-                {ListCardItems}
-            </List>
+            <div className="CardList">
+                <Item.Group divided onClick={this.onUpdate.bind(this)}>
+                    {ListCardItems}
+                    <div className="CardItem">
+                        <AddCard />
+                    </div>
+                </Item.Group>
+            </div>
         );
     }
 }
