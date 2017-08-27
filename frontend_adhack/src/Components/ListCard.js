@@ -41,6 +41,15 @@ class ListCard extends Component {
             <div className="CardList">
                 <Item.Group divided onClick={this.onUpdate.bind(this)}>
                     {ListCardItems}
+                        <div className="CardItem">
+                            <a href="/add_card">
+                                <Item>
+                                    <div className="itemEmpty ">
+                                            <Icon name="plus" size="massive" color="black"/>
+                                    </div>
+                                </Item>
+                            </a>
+                        </div>
                 </Item.Group>
             </div>
         );
