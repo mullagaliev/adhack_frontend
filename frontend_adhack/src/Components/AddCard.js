@@ -379,16 +379,10 @@ class AddCard extends React.Component {
                                     </div>
                                 </Form.Field>
                                 <Form.Group inline grouped>
-                                    <Grid columns={2}>
-                                        <Grid.Column  >
                                             <Label>Пол:</Label>
-                                        </Grid.Column>
-                                        <Grid.Column  >
                                             <Form.Radio checked label='Мужчины' value='2'  control='input' type='radio' name="sex"/>
                                             <Form.Radio label='Женщины' value='1'  control='input' type='radio' name="sex"/>
                                             <Form.Radio label='Все' value='0'  control='input' type='radio' name="sex"/>
-                                        </Grid.Column>
-                                    </Grid>
                                 </Form.Group>
                             </div>
 
