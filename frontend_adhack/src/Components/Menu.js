@@ -11,6 +11,7 @@ export default class MenuExampleSecondaryPointing extends Component {
             <div>
                 <Menu pointing secondary className="HeadMenu">
                     <Menu.Item name='Главная' active={activeItem === 'Главная'} onClick={this.handleItemClick} />
+
                     <Menu.Item name='Новая компания' active={activeItem === 'Новая компания'} onClick={this.handleItemClick} />
                     <Menu.Item name='Вход' active={activeItem === 'Вход'} onClick={this.handleItemClick} />
 

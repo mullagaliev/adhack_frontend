@@ -33,12 +33,14 @@ let menuItems = [
         name: 'Новая компания'
     }
 ];
-
-
+const Header = () =>{
+    return <div className="HeaderLogo"><a href="/" className="HeaderLogo__logo"><img  src="/assets/logo.png"></img></a></div>;
+};
 class App extends Component {
   render() {
     return (
         <div className="App">
+            <Header />
             <Menu menuItems={menuItems}/>
             <Main />
         </div>
