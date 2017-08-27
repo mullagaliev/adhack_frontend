@@ -18,12 +18,14 @@ class AddCard extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
+        console.log(this.state.value);
+        console.log(event);
+        //alert('An essay was submitted: ' + this.state.value);
+        //event.preventDefault();
+    };
 
     onLoad(){
-        fetch('http://b8309721.ngrok.io/cities')
+        fetch('http://41569d3b.ngrok.io/cities')
             .then(res => res.json())
             .then(json => {
                 this.setState({ cities: json.response.items });
@@ -298,7 +300,7 @@ class AddCard extends React.Component {
 
 
         return (
-            <Form action="http://b8309721.ngrok.io/marketing/start" method="POST">
+            <Form action="http://41569d3b.ngrok.io/marketing/start" method="POST" onSubmit={this.handleSubmit}>
                 <Grid columns={1}>
                     <Grid.Column>
                         <Segment raised>
@@ -412,7 +414,7 @@ class AddCard extends React.Component {
                             </div>
 
                             <div className="CompanyInfo">
-                                <Button fluid color="green" size="big">
+                                <Button fluid color="green" size="big" >
                                     <Icon name="plus"/>
                                     Добавить</Button>
                             </div>

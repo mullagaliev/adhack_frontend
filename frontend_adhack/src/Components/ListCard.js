@@ -24,10 +24,10 @@ class ListCard extends Component {
         this.onLoad();
     }
     onLoad(){
-        fetch('http://b8309721.ngrok.io/marketing/company')
+        fetch('http://41569d3b.ngrok.io/marketing/company')
             .then(res => res.json())
             .then(json => {
-                fetch('http://b8309721.ngrok.io/ads/vk/getStatistics')
+                fetch('http://41569d3b.ngrok.io/ads/vk/getStatistics')
                     .then(res => res.json())
                     .then(json2 => {
                             json = json.map((item, index)=>{

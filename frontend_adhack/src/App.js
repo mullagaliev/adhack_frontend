@@ -8,12 +8,17 @@ import Menu from './Components/Menu';
 
 import { Switch, Route} from 'react-router-dom';
 
+const Logout = () =>{
+    return <h3 >Пока!</h3>;
+};
+
 const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/login' component={Login}/>
             <Route path='/add_card' component={AddCard}/>
+            <Route path='/logout' component={Logout}/>
         </Switch>
     </main>
 );

@@ -188,8 +188,19 @@ body {
   height: 100%;
   padding-top: 7px;
   width: 100%;
+  color: white !important;
+
+}
+
+.ui.feed>.event>.content .summary{
+  color: white;
 }
 
 .logout{
-  color: black !important;
+  color: white !important;
 }
+
+.whiteLink{
+  color: white;
+}
+
