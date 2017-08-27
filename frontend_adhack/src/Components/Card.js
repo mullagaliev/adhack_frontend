@@ -1,6 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { Button, Icon, Image as ImageComponent, Item, Label, Image, Modal, Header  } from 'semantic-ui-react'
+import {
+    Button,
+    Icon,
+    Image as ImageComponent,
+    Item,
+    Label,
+    Image,
+    Modal,
+    Header,
+    Segment,
+    Statistic,
+    Grid
+} from 'semantic-ui-react'
 
 class Card extends Component {
     constructor(props) {
@@ -19,33 +31,144 @@ class Card extends Component {
         let day = date.getDate();
         let month = date.getMonth();
         let year = date.getFullYear();
+        let clicks = 0;
+        let views = 0;
+        let ctr = 0;
+        let isVK = false;
+        let isFB = false;
+
+
+
+        let days = this.state.data.state;
+        if (days !== undefined){
+            days = days.stats;
+        }
+        let that = this;
+
+        function setKPIs() {
+
+            if(days !== undefined){
+                for(let i = 0; i < days.length; i++){
+                    if (days[i].impressions !== undefined){
+                        views += Number(days[i].impressions);
+                    }
+                    if (days[i].clicks !== undefined){
+                        clicks += Number(days[i].clicks);
+                    }
+                }
+            }
+            if(views !== 0){
+                ctr = clicks * 100 / views;
+                ctr = ctr.toString();
+                ctr = ctr.substring(0, ctr.indexOf("." ) + 3);
+            }
+            if (that.state.data.markets !== undefined && that.state.data.markets !== null){
+                if (that.state.data.markets.indexOf('vk') >= 0){
+                    isVK = true;
+                }
+                if (that.state.data.markets.indexOf('fb') >= 0){
+                    isFB = true;
+                }
+            }
+
+        }
+
+        setKPIs();
 
         let strDate = day + "." + month + "." + year;
         return (
             <Item>
-                <Item.Image size="tiny"
-                    src='https://pp.userapi.com/c837335/v837335260/4e730/bAu3r30fDUA.jpg' />
-                <Item.Content>
-                    <Item.Header as='h2'>{this.state.data.name}</Item.Header>
-                    <Item.Description><Icon name="line chart" size="large"/><b>Бюджет</b> 8600Р</Item.Description>
-                    <Item.Description> <Icon name="money" size="large"/><b>CTR</b> 3,87%</Item.Description>
-                </Item.Content>
+                <Grid columns={2}>
+                    <Grid.Row>
+                        <Grid.Column  width="4">
+                            <Item.Image size="tiny"
+                                        src='https://pp.userapi.com/c837335/v837335260/4e730/bAu3r30fDUA.jpg'/>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <Item.Content>
+                                <Item.Header as='h3'>{this.state.data.companyName}</Item.Header>
+                                <Item.Description><Icon name="line chart" size="large"/><b>Бюджет</b> {this.state.data.limit}</Item.Description>
+                                <Item.Description> <Icon name="money" size="large"/><b>CTR</b> {ctr}%</Item.Description>
+                            </Item.Content>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+
+
                 <Item.Extra>
                     <br/>
-                    <Label><Icon name="vk" color="blue"/>Vkontakte</Label>
-                    <Label><Icon name="facebook f" color="blue"/>Facebook</Label>
+                    {isVK && [<Label><Icon name="vk" color="blue"/>Vkontakte</Label>]}
+
+                    {isFB && [<Label><Icon name="facebook f" color="blue"/>Facebook</Label>]}
                 </Item.Extra>
                 <br/>
-                <Modal trigger={ <Button primary fluid>Просмотреть</Button>}>
-                    <Modal.Header>Select a Photo</Modal.Header>
-                    <Modal.Content image>
-                        <Image wrapped size='medium' src='/assets/images/avatar/large/rachel.png' />
+                <Modal trigger={<Button primary fluid>Просмотреть</Button>} closeIcon='close'>
+                    <Modal.Header>{this.state.data.companyName}</Modal.Header>
+                    <Modal.Content>
                         <Modal.Description>
-                            <Header>Default Profile Image</Header>
-                            <p>We've found the following gravatar image associated with your e-mail address.</p>
-                            <p>Is it okay to use this photo?</p>
+                            <Segment raised>
+                                {/*<Label></Label>*/}
+                                <Label><h2><Icon name="info"/>Общая информация</h2></Label>
+                                <Statistic.Group>
+                                    <Statistic>
+                                        <Statistic.Value><Icon name='money' />
+                                            {this.state.data.limit}</Statistic.Value>
+                                        <Statistic.Label>Бюджет</Statistic.Label>
+                                    </Statistic>
+
+                                    <Statistic>
+                                        <Statistic.Value>
+                                            <Icon name='building outline' />
+                                            Санкт-Петербург
+                                        </Statistic.Value>
+                                        <Statistic.Label>Город</Statistic.Label>
+                                    </Statistic>
+
+                                    {/*<Statistic>*/}
+                                        {/*<Statistic.Value>*/}
+                                            {/*<Icon name='users' />*/}
+                                            {/*18-38*/}
+                                        {/*</Statistic.Value>*/}
+                                        {/*<Statistic.Label>Возраст</Statistic.Label>*/}
+                                    {/*</Statistic>*/}
+
+                                </Statistic.Group>
+                            </Segment>
+                            <Segment raised>
+                                <Label><h2><Icon name="vk" color="blue"/>Vkontakte</h2></Label>
+
+                                <Statistic.Group>
+                                    <Statistic>
+                                        <Statistic.Value><Icon name='money' />
+                                            135.00</Statistic.Value>
+                                        <Statistic.Label>Потрачено</Statistic.Label>
+                                    </Statistic>
+
+                                    <Statistic>
+                                        <Statistic.Value><Icon name='user' />
+                                            {views}</Statistic.Value>
+                                        <Statistic.Label>Показы</Statistic.Label>
+                                    </Statistic>
+
+                                    <Statistic>
+                                        <Statistic.Value><Icon name='hand pointer' />
+                                            {clicks}</Statistic.Value>
+                                        <Statistic.Label>Переходы</Statistic.Label>
+                                    </Statistic>
+
+                                    <Statistic>
+                                        <Statistic.Value><Icon name='area chart' />
+                                            {ctr}%</Statistic.Value>
+                                        <Statistic.Label>CTR</Statistic.Label>
+                                    </Statistic>
+                                </Statistic.Group>
+                            </Segment>
+
                         </Modal.Description>
                     </Modal.Content>
+                    {/*<Modal.Actions>*/}
+                    {/*<Button primary content='Закрыть' onClick={this.close}/>*/}
+                    {/*</Modal.Actions>*/}
                 </Modal>
             </Item>
         );
