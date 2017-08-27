@@ -80,6 +80,30 @@ body {
   margin: 0 auto;
 }
 
+.HeaderLogo{
+  background-color: #6A96AE;
+  height: 50px;
+  z-index: 4;
+  position: relative;
+}
+
+.HeaderLogo__logo{
+  height: 50px;
+  display: block;
+  //margin: 0 auto;
+  width: 240px;
+}
+
+.HeaderLogo__logo img{
+  height: 50px;
+}
+
+.Logo{
+  background-image: url("/assets/logo.png");
+  background-size: 20%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
 .HeadMenu{
   width: 100%;
   background-color: white;
