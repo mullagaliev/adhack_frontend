@@ -395,6 +395,10 @@ class AddCard extends React.Component {
                                 </Form.Group>
 
                                 <Form.Group>
+                                    <Label width={2}>Подробное описание</Label>
+                                    <TextArea placeholder='Моя реклама' name="longDescription"/>
+                                </Form.Group>
+                                <Form.Group>
                                     <Label width={2}>Возрастное ограничение</Label>
                                     <Form.Input name="minAge" type="number" placeholder='от' width={7} />
                                     <Form.Input name="maxAge" type="number" placeholder='до' width={7} />

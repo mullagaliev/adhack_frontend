@@ -34,14 +34,18 @@ let menuItems = [
     }
 ];
 const Header = () =>{
-    return <div className="HeaderLogo"><a href="/" className="HeaderLogo__logo"><img  src="/assets/logo.png"></img></a></div>;
+    return <div className="Header">
+        <a href="/" className="HeaderLogo__logo">
+            <img  src="/assets/logo.png"></img>
+        </a>
+        <Menu menuItems={menuItems} className="Header__menu"/>
+    </div>;
 };
 class App extends Component {
   render() {
     return (
         <div className="App">
             <Header />
-            <Menu menuItems={menuItems}/>
             <Main />
         </div>
     );

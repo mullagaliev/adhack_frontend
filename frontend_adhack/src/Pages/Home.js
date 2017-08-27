@@ -5,7 +5,7 @@ import '../App.css';
 import ListCard from '../Components/ListCard';
 import Test from '../Layouts/Test';
 
-import { Button, Icon, Grid, Message } from 'semantic-ui-react'
+import { Button, Icon, Grid, Message, Feed } from 'semantic-ui-react'
 
 var fetch = require('node-fetch');
 
