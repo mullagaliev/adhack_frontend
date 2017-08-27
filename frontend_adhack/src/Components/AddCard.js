@@ -295,28 +295,7 @@ class AddCard extends React.Component {
                             <div className="CompanyInfo">
                                 <span> </span>
                             </div>
-                            <Label as='a' color='blue' ribbon size="big">
-                                <Icon name="retweet"/>
-                                Площадка для продвижения</Label>
-                            <div className="CompanyInfo">
-                                <Form.Group>
-                                    <Label width={2}>Краткое описание</Label>
-                                    <TextArea name="shortDescription" placeholder='Краткое описание' width={14} />
-                                </Form.Group>
-                                <Form.Group>
-                                    <Label width={2}>Полное описание</Label>
-                                    <TextArea name="longDescription" placeholder='Полное описание' width={14} />
-                                </Form.Group>
-                                <Form.Group>
-                                    <Label width={2}>Возрастное ограничение</Label>
-                                    <Form.Input name="minAge" type="number" width={7} />
-                                    <Form.Input name="maxAge" type="number" width={7} />
-                                </Form.Group>
-                                <Form.Group>
-                                    <Label width={2}>Бюджет</Label>
-                                    <Form.Input name="limit" type="number" width={16} />
-                                </Form.Group>
-                            </div>
+
                             <Label as='a' color='blue' ribbon size="big">
                                 <Icon name="building"/>
                                 Информация о компании</Label>
@@ -379,29 +358,42 @@ class AddCard extends React.Component {
                                     </div>
                                 </Form.Field>
                                 <Form.Group inline grouped>
-                                            <Label>Пол:</Label>
-                                            <Form.Radio checked label='Мужчины' value='2'  control='input' type='radio' name="sex"/>
-                                            <Form.Radio label='Женщины' value='1'  control='input' type='radio' name="sex"/>
-                                            <Form.Radio label='Все' value='0'  control='input' type='radio' name="sex"/>
+                                    <Label>Пол:</Label>
+                                    <Form.Radio checked label='Мужчины' value='2'  control='input' type='radio' name="sex"/>
+                                    <Form.Radio label='Женщины' value='1'  control='input' type='radio' name="sex"/>
+                                    <Form.Radio label='Все' value='0'  control='input' type='radio' name="sex"/>
                                 </Form.Group>
                             </div>
 
                             <Label as='a' color='blue' ribbon size="big">
                                 <Icon name="info circle"/>
-                                Содержание новости</Label>
+                                Содержание объявления</Label>
                             <div className="CompanyInfo">
-                                <Form.Group >
-                                    <Label width={2}>
-                                        <Icon name="image"/>
-                                        Картинка</Label>
-                                    <Form.Input name="pictureLink" placeholder='Ссылка на баннер. Например: https://www.flaticon.com/free-icon/twitter_23931' width={14} />
-                                </Form.Group>
                                 <Form.Group>
                                     <Label width={2}>
                                         <Icon name="linkify"/>
                                         Ссылка на страницу</Label>
                                     <Form.Input name="targetLink" placeholder='Ссылка на страницу. Например: https://vk.com/feed?w=wall1324732_1994' width={14} />
                                 </Form.Group>
+
+                                <Form.Group >
+                                    <Label width={2}>
+                                        <Icon name="image"/>
+                                        Картинка</Label>
+                                    <Form.Input name="pictureLink" placeholder='Ссылка на баннер. Например: https://www.flaticon.com/free-icon/twitter_23931' width={14} />
+                                </Form.Group>
+
+                                <Form.Group>
+                                    <Label width={2}>Возрастное ограничение</Label>
+                                    <Form.Input name="minAge" type="number" width={7} />
+                                    <Form.Input name="maxAge" type="number" width={7} />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Label width={2}>Бюджет</Label>
+                                    <Form.Input name="limit" type="number"  width={16} />
+                                </Form.Group>
+
+
                             </div>
 
                             <div className="CompanyInfo">

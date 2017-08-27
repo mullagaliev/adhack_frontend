@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react'
 import  Card from './Card';
 import  AddCard from './AddCard';
+var nanoid = require('nanoid');
+
 var jsonItem = {"id":1007813523,
     "type":"normal",
     "name":"Бой в Hookah PACMAN",
@@ -12,26 +14,35 @@ var jsonItem = {"id":1007813523,
     "stop_time":"1503802800",
     "create_time":"1503678837",
     "update_time":"1503687731"};
-var data = {"response":[ jsonItem]};
+
+var data = [jsonItem];
 
 class ListCard extends Component {
     constructor(props) {
         super(props);
         this.state = {data: data};
+        this.onLoad();
     }
-    onUpdate(){
-        //return 1 ;
-        jsonItem = data.response.pop();
-
-        var newJsonItem = Object.assign({}, jsonItem);
-        newJsonItem.id +=  1;
-        data.response.push(jsonItem);
-        data.response.push(newJsonItem);
-        console.log( data.response);
-        this.setState({ data: data });
+    onLoad(){
+        fetch('http://b8309721.ngrok.io/marketing/company')
+            .then(res => res.json())
+            .then(json => {
+                fetch('http://b8309721.ngrok.io/ads/vk/getStatistics')
+                    .then(res => res.json())
+                    .then(json2 => {
+                            json = json.map((item, index)=>{
+                                if(index === 0){
+                                    item.state = json2.response[0];
+                                }
+                                return item;
+                            });
+                            this.setState({ data: json });
+                    });
+        });
     };
+
     render() {
-        let ListCardItems = data.response.map((item) =>
+        let ListCardItems = this.state.data.map((item) =>
             <div className="CardItem">
                 <Card key={item.id} data={item}/>
             </div>
@@ -39,7 +50,7 @@ class ListCard extends Component {
 
         return (
             <div className="CardList">
-                <Item.Group divided onClick={this.onUpdate.bind(this)}>
+                <Item.Group divided >
                     <div className="CardItem">
                         <a href="/add_card">
                             <Item>

@@ -9,6 +9,7 @@ class Card extends Component {
     }
 
     render() {
+        console.log(this.state.data);
         let timestamp = this.state.data.create_time;
         let date = new Date();
         date.setTime(timestamp);

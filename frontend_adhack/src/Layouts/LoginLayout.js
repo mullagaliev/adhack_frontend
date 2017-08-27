@@ -33,8 +33,9 @@ const LoginForm = () => (
               placeholder='Пароль'
               type='password'
             />
-
-            <Button color='teal' fluid size='large'>Вход</Button>
+            <a href="/">
+              <Button color='teal' fluid size='large'>Вход</Button>
+            </a>
           </Segment>
         </Form>
         <Message>

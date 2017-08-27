@@ -12,12 +12,7 @@ var fetch = require('node-fetch');
 
 class Home extends Component {
     onHandlerClick(){
-        fetch('https://api.github.com/users/github')
-            .then(function(res) {
-                return res.json();
-            }).then(function(json) {
-            console.log(json);
-        });
+
     };
     render() {
         return (
