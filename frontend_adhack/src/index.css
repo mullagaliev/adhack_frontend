@@ -9,6 +9,14 @@ body {
   width: 100%;
 }
 
+.ui.blue.label, .ui.blue.labels .label, .ui.blue.labels .label:hover, a.ui.blue.label:hover{
+  background-color: #6A96AE!important;
+}
+
+.ui.blue.ribbon.label{
+  border-color: #6A96AE!important;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
