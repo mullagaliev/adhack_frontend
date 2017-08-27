@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Button, Icon, Image as ImageComponent, Item, Label, Image  } from 'semantic-ui-react'
+import { Button, Icon, Image as ImageComponent, Item, Label, Image, Modal, Header  } from 'semantic-ui-react'
 
 class Card extends Component {
     constructor(props) {
@@ -28,9 +28,6 @@ class Card extends Component {
                     <Item.Header as='h2'>{this.state.data.name}</Item.Header>
                     <Item.Description><Icon name="line chart" size="large"/><b>Бюджет</b> 8600Р</Item.Description>
                     <Item.Description> <Icon name="money" size="large"/><b>CTR</b> 3,87%</Item.Description>
-
-
-
                 </Item.Content>
                 <Item.Extra>
                     <br/>
@@ -38,7 +35,17 @@ class Card extends Component {
                     <Label><Icon name="facebook f" color="blue"/>Facebook</Label>
                 </Item.Extra>
                 <br/>
-                <Button primary fluid>Просмотреть</Button>
+                <Modal trigger={ <Button primary fluid>Просмотреть</Button>}>
+                    <Modal.Header>Select a Photo</Modal.Header>
+                    <Modal.Content image>
+                        <Image wrapped size='medium' src='/assets/images/avatar/large/rachel.png' />
+                        <Modal.Description>
+                            <Header>Default Profile Image</Header>
+                            <p>We've found the following gravatar image associated with your e-mail address.</p>
+                            <p>Is it okay to use this photo?</p>
+                        </Modal.Description>
+                    </Modal.Content>
+                </Modal>
             </Item>
         );
     }
