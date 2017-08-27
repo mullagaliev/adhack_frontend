@@ -16,7 +16,7 @@ export default class MenuExampleSecondaryPointing extends Component {
                         <Feed.Content>
                             <Feed.Date content='Online'/>
                             <Feed.Summary>
-                                User1
+                                German
                                 <a href="/logout" className="logout">
                                     <Icon name="sign out"/>
                                 </a>

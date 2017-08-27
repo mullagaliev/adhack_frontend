@@ -94,13 +94,13 @@ body {
 
 .Header{
   background-color: #6A96AE;
-  height: 50px;
+  height: 75px;
   z-index: 4;
   position: relative;
 }
 
 .HeaderLogo__logo{
-  height: 50px;
+  height: 75px;
   display: block;
   //margin: 0 auto;
   float: left;
@@ -108,7 +108,7 @@ body {
 }
 
 .HeaderLogo__logo img{
-  height: 50px;
+  height: 75px;
 }
 
 .Logo{
@@ -124,8 +124,8 @@ body {
   position: relative;
   z-index: 4;
   background-color: white !important;
-  height: 50px;
-  width: 150px;
+  height: 75px;
+  width: 200px;
 }
 .HeadMenu .item{
  width: 25% !important;
@@ -186,7 +186,7 @@ body {
 .bg--accent{
   background-color: #6A96AE;
   height: 100%;
-  padding-top: 7px;
+  padding-top: 20px;
   width: 100%;
   color: white !important;
 
