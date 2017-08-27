@@ -15,8 +15,7 @@ const LoginForm = () => (
     >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as='h2' color='teal' textAlign='center'>
-          <Image src='/logo.png' />
-          {' '}Вход по email/login
+
         </Header>
         <Form size='large'>
           <Segment stacked>
