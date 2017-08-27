@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment, Label, Dropdown, Icon, Checkbox  } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Message, Segment, Label, Select, Icon, Checkbox  } from 'semantic-ui-react'
 
 class AddCard extends React.Component {
     constructor(props) {
@@ -287,7 +287,7 @@ class AddCard extends React.Component {
         ];
 
         return (
-            <Form>
+            <Form action="http://b8309721.ngrok.io/marketing/start" method="POST">
                 <Grid columns={1}>
                     <Grid.Column>
                         <Segment raised>
@@ -322,11 +322,11 @@ class AddCard extends React.Component {
                             <div className="CompanyInfo">
                                 <Form.Group>
                                     <Label width={2}>Название фирмы</Label>
-                                    <Form.Input placeholder='Название фирмы' width={14} />
+                                    <Form.Input name="companyName" placeholder='Название фирмы' width={14} />
                                 </Form.Group>
                                 <Form.Group>
                                     <Label  width={2}>Сфера деятельности</Label>
-                                    <Dropdown label='Сфера деятельности'fluid selection options={domain}  width={14}/>
+                                    <Select name="domain[]" label='Сфера деятельности'fluid selection options={domain}  width={14}/>
                                 </Form.Group>
                             </div>
 
@@ -336,21 +336,22 @@ class AddCard extends React.Component {
                             <div className="CompanyInfo">
                                 <Form.Group>
                                     <Label width={2}>Страны</Label>
-                                    <Dropdown label='Страны'fluid multiple selection search options={countries}  width={14}/>
+                                    <Select name="countries[]" label='Страны' fluid multiple selection search options={countries}  width={14}/>
                                 </Form.Group>
-                                <Form.Group>
+                                
+                                <Form.Field>
                                     <Label width={2}>Города</Label>
-                                    <Dropdown label='Страны'fluid multiple selection search options={cities}  width={14}/>
-                                </Form.Group>
+                                    <Select name="cities[]" label='Страны' fluid multiple selection search options={cities}  width={14}/>
+                                </Form.Field>
                                 <Form.Group inline grouped>
                                     <Grid columns={2}>
                                         <Grid.Column  >
                                             <Label>Пол:</Label>
                                         </Grid.Column>
                                         <Grid.Column  >
-                                            <Form.Radio label='Мужчины' value='sm'  control='input' type='radio' name='htmlRadios'/>
-                                            <Form.Radio label='Женщины' value='md'  control='input' type='radio' name='htmlRadios'/>
-                                            <Form.Radio label='Все' value='lg'  control='input' type='radio' name='htmlRadios'/>
+                                            <Form.Radio label='Мужчины' value='2'  control='input' type='radio' name="sex"/>
+                                            <Form.Radio label='Женщины' value='1'  control='input' type='radio' name="sex"/>
+                                            <Form.Radio label='Все' value='0'  control='input' type='radio' name="sex"/>
                                         </Grid.Column>
                                     </Grid>
                                 </Form.Group>
@@ -364,13 +365,13 @@ class AddCard extends React.Component {
                                     <Label width={2}>
                                         <Icon name="image"/>
                                         Картинка</Label>
-                                    <Form.Input placeholder='Ссылка на баннер. Например: https://www.flaticon.com/free-icon/twitter_23931' width={14} />
+                                    <Form.Input name="pictureLink" placeholder='Ссылка на баннер. Например: https://www.flaticon.com/free-icon/twitter_23931' width={14} />
                                 </Form.Group>
                                 <Form.Group>
                                     <Label width={2}>
                                         <Icon name="linkify"/>
                                         Ссылка на страницу</Label>
-                                    <Form.Input placeholder='Ссылка на страницу. Например: https://vk.com/feed?w=wall1324732_1994' width={14} />
+                                    <Form.Input name="targetLink" placeholder='Ссылка на страницу. Например: https://vk.com/feed?w=wall1324732_1994' width={14} />
                                 </Form.Group>
                             </div>
 
