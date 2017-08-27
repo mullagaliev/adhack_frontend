@@ -5,11 +5,12 @@ class AddCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 'Please write an essay about your favorite DOM element.'
+            value: 'Please write an essay about your favorite DOM element.',
+            cities: []
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onLoad();
     }
 
     handleChange(event) {
@@ -20,6 +21,14 @@ class AddCard extends React.Component {
         alert('An essay was submitted: ' + this.state.value);
         event.preventDefault();
     }
+
+    onLoad(){
+        fetch('http://b8309721.ngrok.io/cities')
+            .then(res => res.json())
+            .then(json => {
+                this.setState({ cities: json.response.items });
+            });
+    };
 
     render() {
         const domain = [
@@ -286,6 +295,8 @@ class AddCard extends React.Component {
             { key: 'kiev', text: 'Киев', value: 'kiev' },
         ];
 
+
+
         return (
             <Form action="http://b8309721.ngrok.io/marketing/start" method="POST">
                 <Grid columns={1}>
@@ -348,9 +359,9 @@ class AddCard extends React.Component {
                                         <div class="field">
                                             <select name="citie">
                                                 {
-                                                    cities.map((item)=>{
+                                                    this.state.cities.map((item)=>{
                                                         console.log(item);
-                                                        return <option value={item.value}>{item.text}</option>
+                                                        return <option value={item.id}>{item.title}</option>
                                                     })
                                                 }
                                             </select>
