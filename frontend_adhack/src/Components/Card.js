@@ -122,7 +122,7 @@ class Card extends Component {
 
                                     <Statistic>
                                         <Statistic.Value>
-                                            <Icon name='building outline' />
+                                            <Icon name='building outline' text/>
                                             Санкт-Петербург
                                         </Statistic.Value>
                                         <Statistic.Label>Город</Statistic.Label>
@@ -138,35 +138,65 @@ class Card extends Component {
 
                                 </Statistic.Group>
                             </Segment>
-                            <Segment raised>
-                                <Label><h2><Icon name="vk" color="blue"/>Vkontakte</h2></Label>
+                            {isVK && [<Segment raised>
+                            <Label><h2><Icon name="vk" color="blue"/>Vkontakte</h2></Label>
 
-                                <Statistic.Group>
-                                    <Statistic>
-                                        <Statistic.Value><Icon name='money' />
-                                            135.00</Statistic.Value>
-                                        <Statistic.Label>Потрачено</Statistic.Label>
-                                    </Statistic>
+                            <Statistic.Group>
+                                <Statistic>
+                                    <Statistic.Value><Icon name='money' />
+                                        135</Statistic.Value>
+                                    <Statistic.Label>Потрачено</Statistic.Label>
+                                </Statistic>
 
-                                    <Statistic>
-                                        <Statistic.Value><Icon name='user' />
-                                            {views}</Statistic.Value>
-                                        <Statistic.Label>Показы</Statistic.Label>
-                                    </Statistic>
+                                <Statistic>
+                                    <Statistic.Value><Icon name='user' />
+                                        {views}</Statistic.Value>
+                                    <Statistic.Label>Показы</Statistic.Label>
+                                </Statistic>
 
-                                    <Statistic>
-                                        <Statistic.Value><Icon name='hand pointer' />
-                                            {clicks}</Statistic.Value>
-                                        <Statistic.Label>Переходы</Statistic.Label>
-                                    </Statistic>
+                                <Statistic>
+                                    <Statistic.Value><Icon name='hand pointer' />
+                                        {clicks}</Statistic.Value>
+                                    <Statistic.Label>Переходы</Statistic.Label>
+                                </Statistic>
 
-                                    <Statistic>
-                                        <Statistic.Value><Icon name='area chart' />
-                                            {ctr}%</Statistic.Value>
-                                        <Statistic.Label>CTR</Statistic.Label>
-                                    </Statistic>
-                                </Statistic.Group>
-                            </Segment>
+                                <Statistic>
+                                    <Statistic.Value><Icon name='area chart' />
+                                        {ctr}%</Statistic.Value>
+                                    <Statistic.Label>CTR</Statistic.Label>
+                                </Statistic>
+                            </Statistic.Group>
+                        </Segment>]}
+
+                        {isFB && [<Segment raised>
+                            <Label><h2><Icon name="facebook f" color="blue"/>Facebook</h2></Label>
+
+                            <Statistic.Group>
+                                <Statistic>
+                                    <Statistic.Value><Icon name='money' />
+                                        0</Statistic.Value>
+                                    <Statistic.Label>Потрачено</Statistic.Label>
+                                </Statistic>
+
+                                <Statistic>
+                                    <Statistic.Value><Icon name='user' />
+                                        0</Statistic.Value>
+                                    <Statistic.Label>Показы</Statistic.Label>
+                                </Statistic>
+
+                                <Statistic>
+                                    <Statistic.Value><Icon name='hand pointer' />
+                                        0</Statistic.Value>
+                                    <Statistic.Label>Переходы</Statistic.Label>
+                                </Statistic>
+
+                                <Statistic>
+                                    <Statistic.Value><Icon name='area chart' />
+                                        0%</Statistic.Value>
+                                    <Statistic.Label>CTR</Statistic.Label>
+                                </Statistic>
+                            </Statistic.Group>
+                        </Segment>]}
 
                         </Modal.Description>
                     </Modal.Content>
