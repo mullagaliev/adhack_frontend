@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment, Label, Select, Icon, Checkbox  } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Message, Segment, Label, Select, Icon, Checkbox, TextArea  } from 'semantic-ui-react'
 
 class AddCard extends React.Component {
     constructor(props) {
@@ -299,22 +299,23 @@ class AddCard extends React.Component {
                                 <Icon name="retweet"/>
                                 Площадка для продвижения</Label>
                             <div className="CompanyInfo">
-                                <Button.Group size="big">
-                                    <Button>
-                                        <Icon name="vk"/>
-                                        VK
-                                    </Button>
-                                    <Button.Or />
-                                    <Button>
-                                        <Icon name="facebook square"/>
-                                        Facebook
-                                    </Button>
-                                    <Button.Or />
-                                    <Button>
-                                        <Icon name="yahoo"/>
-                                        Yandex
-                                    </Button>
-                                </Button.Group>
+                                <Form.Group>
+                                    <Label width={2}>Краткое описание</Label>
+                                    <TextArea name="shortDescription" placeholder='Краткое описание' width={14} />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Label width={2}>Полное описание</Label>
+                                    <TextArea name="longDescription" placeholder='Полное описание' width={14} />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Label width={2}>Возрастное ограничение</Label>
+                                    <Form.Input name="minAge" type="number" width={7} />
+                                    <Form.Input name="maxAge" type="number" width={7} />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Label width={2}>Бюджет</Label>
+                                    <Form.Input name="limit" type="number" width={16} />
+                                </Form.Group>
                             </div>
                             <Label as='a' color='blue' ribbon size="big">
                                 <Icon name="building"/>
@@ -324,24 +325,58 @@ class AddCard extends React.Component {
                                     <Label width={2}>Название фирмы</Label>
                                     <Form.Input name="companyName" placeholder='Название фирмы' width={14} />
                                 </Form.Group>
-                                <Form.Group>
-                                    <Label  width={2}>Сфера деятельности</Label>
-                                    <Select name="domain[]" label='Сфера деятельности'fluid selection options={domain}  width={14}/>
-                                </Form.Group>
+
+                                <Form.Field>
+                                    <Label width={2}>Сфера деятельности</Label>
+                                    <div class="ui form">
+                                        <div class="field">
+                                            <select name="domain">
+                                                {
+                                                    domain.map((item)=>{
+                                                        console.log(item);
+                                                        return <option value={item.value}>{item.text}</option>
+                                                    })
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </Form.Field>
                             </div>
 
                             <Label as='a' color='blue' ribbon size="big">
                                 <Icon name="users"/>
                                 Информация об аудитории</Label>
                             <div className="CompanyInfo">
-                                <Form.Group>
+                                <Form.Field>
                                     <Label width={2}>Страны</Label>
-                                    <Select name="countries[]" label='Страны' fluid multiple selection search options={countries}  width={14}/>
-                                </Form.Group>
-                                
+                                    <div class="ui form">
+                                        <div class="field">
+                                            <select name="countrie">
+                                                {
+                                                    countries.map((item)=>{
+                                                        console.log(item);
+                                                        return <option value={item.value}>{item.text}</option>
+                                                    })
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </Form.Field>
+
                                 <Form.Field>
                                     <Label width={2}>Города</Label>
-                                    <Select name="cities[]" label='Страны' fluid multiple selection search options={cities}  width={14}/>
+                                    <div class="ui form">
+                                        <div class="field">
+                                            <select name="citie">
+                                                {
+                                                    cities.map((item)=>{
+                                                        console.log(item);
+                                                        return <option value={item.value}>{item.text}</option>
+                                                    })
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
                                 </Form.Field>
                                 <Form.Group inline grouped>
                                     <Grid columns={2}>
@@ -349,7 +384,7 @@ class AddCard extends React.Component {
                                             <Label>Пол:</Label>
                                         </Grid.Column>
                                         <Grid.Column  >
-                                            <Form.Radio label='Мужчины' value='2'  control='input' type='radio' name="sex"/>
+                                            <Form.Radio checked label='Мужчины' value='2'  control='input' type='radio' name="sex"/>
                                             <Form.Radio label='Женщины' value='1'  control='input' type='radio' name="sex"/>
                                             <Form.Radio label='Все' value='0'  control='input' type='radio' name="sex"/>
                                         </Grid.Column>
