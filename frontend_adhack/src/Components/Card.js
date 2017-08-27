@@ -22,22 +22,23 @@ class Card extends Component {
         let strDate = day + "." + month + "." + year;
         return (
             <Item>
-                <Item.Image 
-                    src='http://68.media.tumblr.com/2612088fda38b4eeb28b0884fc59b145/tumblr_o8putdcByN1st5lhmo1_1280.jpg' />
+                <Item.Image size="tiny"
+                    src='https://pp.userapi.com/c837335/v837335260/4e730/bAu3r30fDUA.jpg' />
                 <Item.Content>
                     <Item.Header as='h2'>{this.state.data.name}</Item.Header>
                     <Item.Description><Icon name="line chart" size="large"/><b>Бюджет</b> 8600Р</Item.Description>
                     <Item.Description> <Icon name="money" size="large"/><b>CTR</b> 3,87%</Item.Description>
-                    <br/>
-                    <Item.Extra> 
-                        <Label><Icon name="vk" color="blue"/>Vkontakte</Label>
-                        <Label><Icon name="yahoo" color="red"/>Yandex</Label>
-                        <Label><Icon name="facebook f" color="blue"/>Facebook</Label>
-                    </Item.Extra>
-                    <br/>
-                    <Button primary fluid>Просмотреть</Button>
+
+
 
                 </Item.Content>
+                <Item.Extra>
+                    <br/>
+                    <Label><Icon name="vk" color="blue"/>Vkontakte</Label>
+                    <Label><Icon name="facebook f" color="blue"/>Facebook</Label>
+                </Item.Extra>
+                <br/>
+                <Button primary fluid>Просмотреть</Button>
             </Item>
         );
     }

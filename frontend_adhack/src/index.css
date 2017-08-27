@@ -47,7 +47,11 @@ body {
   padding: 10px;
 }
 .item img{
-  width: 100%;
+  /*width: 100%;*/
+}
+
+.content {
+  float: right;
 }
 
 .item {
@@ -157,7 +161,7 @@ body {
   border: 2px dashed #bbb;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  padding: 50px;
+  padding: 37px;
   text-align: center;
   //font: 21pt bold arial;
   color: #bbb;
