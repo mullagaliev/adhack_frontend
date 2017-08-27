@@ -108,7 +108,7 @@ class Card extends Component {
                 <br/>
                 <Modal trigger={<Button primary fluid>Просмотреть</Button>} closeIcon='close'>
                     <Modal.Header>{this.state.data.companyName}</Modal.Header>
-                    <Modal.Content>
+                    <Modal.Content scrolling>
                         <Modal.Description>
                             <Segment raised>
                                 {/*<Label></Label>*/}
