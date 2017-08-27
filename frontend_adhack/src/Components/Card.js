@@ -36,10 +36,14 @@ class Card extends Component {
         let ctr = 0;
         let isVK = false;
         let isFB = false;
+        let img = "https://pp.userapi.com/c639621/v639621621/432ae/pxVwkHUtBr8.jpg";
 
 
 
         let days = this.state.data.state;
+        if (this.state.data.pictureLink !== undefined){
+            img = this.state.data.pictureLink;
+        }
         if (days !== undefined){
             days = days.stats;
         }
@@ -82,7 +86,7 @@ class Card extends Component {
                     <Grid.Row>
                         <Grid.Column  width="4">
                             <Item.Image size="tiny"
-                                        src='https://pp.userapi.com/c837335/v837335260/4e730/bAu3r30fDUA.jpg'/>
+                                        src={img}/>
                         </Grid.Column>
                         <Grid.Column>
                             <Item.Content>
