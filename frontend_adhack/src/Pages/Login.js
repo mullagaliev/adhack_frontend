@@ -6,9 +6,14 @@ import CLogin from '../Layouts/LoginLayout';
 class Login extends Component {
     render() {
         return (
-            <div>
-                <h1>Welcome</h1>
-                <CLogin />
+            <div className="LoginPage">
+                <div className="LoginPage__bg">
+
+                </div>
+                <div className="LoginPage__inner">
+                    <h1>Добро пожаловать!</h1>
+                    <CLogin />
+                </div>
             </div>
         );
     }

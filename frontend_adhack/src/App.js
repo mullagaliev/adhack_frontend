@@ -4,8 +4,9 @@ import './App.css';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import AddCard from './Pages/AddCard';
+import Menu from './Components/Menu';
 
-import { Switch, Route , Link} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 
 const Main = () => (
     <main>
@@ -18,25 +19,27 @@ const Main = () => (
 );
 
 
-
-const Header = () => (
-    <header>
-        <nav>
-            <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/add_card'>Новая компания</Link></li>
-            </ul>
-        </nav>
-    </header>
-);
+let menuItems = [
+    {
+        link: '/',
+        name: 'Главная'
+    },
+    {
+        link: '/login',
+        name: 'Вход'
+    },
+    {
+        link: '/add_card',
+        name: 'Новая компания'
+    }
+];
 
 
 class App extends Component {
   render() {
     return (
-        <div>
-            <Header />
+        <div className="App">
+            <Menu menuItems={menuItems}/>
             <Main />
         </div>
     );

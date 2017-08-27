@@ -8,13 +8,6 @@ const LoginForm = () => (
       You can do same with CSS, the main idea is that all the elements up to the `Grid`
       below must have a height of 100%.
     */}
-    <style>{`
-      body > div,
-      body > div > div,
-      body > div > div > div.login-form {
-        height: 100%;
-      }
-    `}</style>
     <Grid
       textAlign='center'
       style={{ height: '100%' }}
@@ -23,7 +16,7 @@ const LoginForm = () => (
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as='h2' color='teal' textAlign='center'>
           <Image src='/logo.png' />
-          {' '}Log-in to your account
+          {' '}Вход по email/login
         </Header>
         <Form size='large'>
           <Segment stacked>
@@ -31,21 +24,21 @@ const LoginForm = () => (
               fluid
               icon='user'
               iconPosition='left'
-              placeholder='E-mail address'
+              placeholder='E-mail/Login'
             />
             <Form.Input
               fluid
               icon='lock'
               iconPosition='left'
-              placeholder='Password'
+              placeholder='Пароль'
               type='password'
             />
 
-            <Button color='teal' fluid size='large'>Login</Button>
+            <Button color='teal' fluid size='large'>Вход</Button>
           </Segment>
         </Form>
         <Message>
-          New to us? <a href='#'>Sign Up</a>
+          Нет профиля? <a href='#'>Создать</a>
         </Message>
       </Grid.Column>
     </Grid>
